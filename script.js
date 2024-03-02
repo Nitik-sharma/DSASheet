@@ -17,20 +17,40 @@
 
 // Selection short
 
-const selectionShort = (arr) => {
-  const n = arr.length;
-  for (let i = 0; i < n - 1; i++) {
-    let minIndex = i;
-    for (let j = i + 1; j < n; j++) {
-      if (arr[j] < arr[minIndex]) {
-        minIndex = j;
-      }
+// const selectionShort = (arr) => {
+//   const n = arr.length;
+//   for (let i = 0; i < n - 1; i++) {
+//     let minIndex = i;
+//     for (let j = i + 1; j < n; j++) {
+//       if (arr[j] < arr[minIndex]) {
+//         minIndex = j;
+//       }
+//     }
+//     if (minIndex !== i) {
+//       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+//     }
+//   }
+//   return arr;
+// };
+
+// console.log(selectionShort([90, 87, 199, 40, 50]));
+
+// Insertion sort
+
+const InsertionSort = (arr) => {
+  let n = arr.length;
+
+  for (let i = 0; i < n; i++) {
+    const key = arr[i];
+    let j = i - 1;
+
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
     }
-    if (minIndex !== i) {
-      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-    }
+    arr[j + 1] = key;
   }
   return arr;
 };
 
-console.log(selectionShort([90, 87, 199, 40, 50]));
+console.log("Insertion short", InsertionSort([10, 9, 8, 7, 6, 14]));
