@@ -37,20 +37,61 @@
 
 // Insertion sort
 
-const InsertionSort = (arr) => {
-  let n = arr.length;
+// const InsertionSort = (arr) => {
+//   let n = arr.length;
 
-  for (let i = 0; i < n; i++) {
-    const key = arr[i];
-    let j = i - 1;
+//   for (let i = 0; i < n; i++) {
+//     const key = arr[i];
+//     let j = i - 1;
 
-    while (j >= 0 && arr[j] > key) {
-      arr[j + 1] = arr[j];
-      j--;
-    }
-    arr[j + 1] = key;
-  }
-  return arr;
+//     while (j >= 0 && arr[j] > key) {
+//       arr[j + 1] = arr[j];
+//       j--;
+//     }
+//     arr[j + 1] = key;
+//   }
+//   return arr;
+// };
+
+// console.log("Insertion short", InsertionSort([10, 9, 8, 7, 6, 14]));
+
+// Sort method in js
+
+const arr = ["Purple", "red", "apple", "Bannana", "orange"];
+
+const ans = arr.sort();
+console.log(ans);
+
+const num = [3, 56, 81, 18, 19];
+const ans1 = num.sort();
+console.log("ANS1", ans1);
+
+const comparision = (a, b) => {
+  return a - b;
 };
-
-console.log("Insertion short", InsertionSort([10, 9, 8, 7, 6, 14]));
+const nm1 = [3, 56, 81, 18];
+const people = [
+  {
+    name: "nitik",
+    age: 22,
+  },
+  {
+    name: "Sahil",
+    age: 24,
+  },
+  {
+    name: "Rohit",
+    age: 26,
+  },
+  {
+    name: "Shivam",
+    age: 21,
+  },
+];
+const ageComprasion = (a, b) => {
+  return a.age - b.age;
+};
+const ans2 = nm1.sort(comparision);
+const ans3 = people.sort(ageComprasion);
+console.log("ANS2", ans2);
+console.log("Age-->", ans3);
